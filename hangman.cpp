@@ -64,7 +64,6 @@ void fillLetter(char playerchoice, string word, char array[]){
 		if(word[i] == playerchoice){
 			if(array[i] != word[i]){
 				array[i] = playerchoice;
-				break;
 			}
 			else{
 				continue;
