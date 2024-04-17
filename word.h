@@ -10,7 +10,7 @@
 
 #include <iostream>
 
-std::string words[] = {("ANA"), ("MERE"), ("PERE"), ("REAL"), ("PIANO"),
+std::string words[] = {("ANA"), ("APPLES"), ("PEARS"), ("REAL"), ("PIANO"),
 		"CALL",
 		"HOROSCOPE",
 		"CREDIBILITY",
