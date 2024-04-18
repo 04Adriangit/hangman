@@ -12,6 +12,7 @@
 
 using namespace std;
 
+void hint(string word, string words[][10]);
 char playerInput(char playerchoice);
 void fillEmpty(char array[], int length);
 void fillLetter(char playerchoice, string word, char array[]);
@@ -26,12 +27,14 @@ int main(int argc, const char* argv[]){
 	char playerchoice;
 	int lives = 11;
 	srand(time(0));
-	int rnd = rand() % 13;
-	string my_word = words[rnd];
+	int rnd1 = rand() % 5;
+	int rnd2 = rand() % 10;
+	string my_word = words[rnd1][rnd2];
 	char output[my_word.length()];
 	int length = sizeof(output)/sizeof(char);
 	fillEmpty(output, length);
 	draw(output, length);
+	hint(my_word, words);
 
 	while(running){
 		playerchoice = toupper(playerInput(playerchoice));
@@ -43,9 +46,37 @@ int main(int argc, const char* argv[]){
 			running = false;
 		}
 	}
-	cout << "lol";
 	return 0;
 }
+
+void hint(string word, string words[][10]){
+	for(int i = 0; i < 5; i++){
+		for(int j = 0; j <= 10; j++){
+			if(word == words[0][j]){
+				cout << "HINT: *** It's a brand! *** \n";
+				break;
+			}
+			else if(word == words[1][j]){
+				cout << "HINT: *** It's a food! *** \n";
+				break;
+			}
+			else if(word == words[2][j]){
+				cout << "HINT: *** It's a job! *** \n";
+				break;
+			}
+			else if(word == words[3][j]){
+				cout << "HINT: *** It's a sport! *** \n";
+				break;
+			}
+			else if(word == words[4][j]){
+				cout << "HINT: *** It's an action! *** \n";
+				break;
+			}
+		}
+		break;
+	}
+}
+
 
 char playerInput(char playerchoice){
 	cout << "Your letter of choice: ";
